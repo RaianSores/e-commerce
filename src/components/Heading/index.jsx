@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./styles.module.scss";
 import { FiMenu } from "@react-icons/all-files/fi/FiMenu";
 import { FiShoppingCart } from "@react-icons/all-files/fi/FiShoppingCart";
@@ -16,51 +17,66 @@ export const Heading = () => {
       <div className={styles.header}>
         <div className={styles.headerLayout}>
           <nav className={styles.containerNav}>
-            <a href="">
-              <FiMenu size={40} />
-            </a>
+            <Link href="">
+              <a>
+                <FiMenu size={40} />
+              </a>
+            </Link>
           </nav>
           <div className={styles.logoHeader}>
             <span>
-              <Image src="/favicon.ico" alt="Logo" width={60} height={60} />
+              <img src="/logo.png" alt="Logo" />
             </span>
           </div>
 
-
           <div className={styles.searchAplication}>
-                        <form action="search.search" method="GET" className={styles.searchForm}>
-                            <input autoComplete="off" type="text" placeholder="Busque aqui" />
-                            <button type="submit" >
-                                <AiOutlineSend size={40} />
-                            </button>
-                            <div className={styles.searchDiv}></div>
-                        </form>
-                    </div>
-          
+            <form
+              action="search.search"
+              method="GET"
+              className={styles.searchForm}
+            >
+              <input autoComplete="off" type="text" placeholder="Busque aqui" />
+              <button type="submit">
+                <AiOutlineSend size={40} />
+              </button>
+              <div className={styles.searchDiv}></div>
+            </form>
+          </div>
+
           <div className={styles.login}>
-            <a href="">
-              <FiLogIn size={45} />
-            </a>
+            <Link href="">
+              <a>
+                <FiLogIn size={45} />
+              </a>
+            </Link>
             <span>
-              Faça
-              <a href=""> Login </a>
-              <br />
-              ou
-              <br />
-              <a href=""> Cadastro</a>
+              <span>Faça </span>
+              <Link href="">
+                <a>Login</a>
+              </Link>
+              <span> ou</span>
+              <Link href="">
+                <a> Cadastro</a>
+              </Link>
             </span>
           </div>
 
           <div className={styles.optionalDependencies}>
-            <a href="">
-              <BsHeart size={30} />
-            </a>
-            <a href="">
-              <BiSupport size={30} />
-            </a>
-            <a href="">
-              <FiShoppingCart size={30} />
-            </a>
+            <Link href="">
+              <a>
+                <BsHeart size={30} />
+              </a>
+            </Link>
+            <Link href="">
+              <a>
+                <BiSupport size={30} />
+              </a>
+            </Link>
+            <Link href="">
+              <a>
+                <FiShoppingCart size={30} />
+              </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -75,10 +91,21 @@ export const Heading = () => {
           <div className={styles.navigation}>
             <nav>
               <div className={styles.categoryNavigation}>
-                <a href="">LANÇAMENTOS</a>
-                <a href="">DESTAQUES</a>
-                <a href="">PC GAMER</a>
-                <a href="">ELETRÔNICOS</a>
+                <Link href="">
+                  <a>LANÇAMENTOS</a>
+                </Link>
+                <Link href="">
+                  <a>CAMISAS</a>
+                </Link>
+                <Link href="">
+                  <a>BLUSAS</a>
+                </Link>
+                <Link href="">
+                  <a>CALÇAS</a>
+                </Link>
+                <Link href="">
+                  <a>SHORTS</a>
+                </Link>
               </div>
             </nav>
           </div>

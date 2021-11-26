@@ -4,8 +4,7 @@ import styles from "./styles.module.scss";
 
 export const Button = ({ text, onClick, disabled = false }) => (
   <button className={styles.button} onClick={onClick} disabled={disabled}>
-    <AiOutlineSend size={40}/>
-    
+    {text}
   </button>
 );
 
