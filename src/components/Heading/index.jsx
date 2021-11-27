@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from 'next/router'
 import styles from "./styles.module.scss";
 import { FiMenu } from "@react-icons/all-files/fi/FiMenu";
 import { FiShoppingCart } from "@react-icons/all-files/fi/FiShoppingCart";
@@ -8,20 +8,46 @@ import { FiLogIn } from "@react-icons/all-files/fi/FiLogIn";
 import { BsHeart } from "@react-icons/all-files/bs/BsHeart";
 import { BiSupport } from "@react-icons/all-files/bi/BiSupport";
 import { BsArrowDownShort } from "@react-icons/all-files/bs/BsArrowDownShort";
-import { TextInput } from "../TextInput";
 import { AiOutlineSend } from "@react-icons/all-files/ai/AiOutlineSend";
+import { GrClose } from "@react-icons/all-files/gr/GrClose";
+
+import { SidebarData } from "./SidebarData";
 
 export const Heading = () => {
+  const router = useRouter()
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
+
   return (
     <header className={styles.containerHeader}>
       <div className={styles.header}>
         <div className={styles.headerLayout}>
-          <nav className={styles.containerNav}>
-            <Link href="">
+          <div className="navbar">
+            <Link href="" passHref>
               <a>
-                <FiMenu size={40} />
+                <FiMenu size={40} onClick={showSidebar} />
               </a>
             </Link>
+          </div>
+          <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+            <ul className="nav-menu-items" onClick={showSidebar}>
+              <li className="navbar-toggle">
+                <Link href="#" className="menu-bars" passHref>
+                  <GrClose />
+                </Link>
+              </li>
+              {SidebarData.map((item, index) => {
+                return (
+                  <li key={index} className={item.cName}>
+                    <Link href={item.path} passHref>
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           </nav>
           <div className={styles.logoHeader}>
             <span>
@@ -51,11 +77,11 @@ export const Heading = () => {
             </Link>
             <span>
               <span>Faça </span>
-              <Link href="">
+              <Link href="/login">
                 <a>Login</a>
               </Link>
               <span> ou</span>
-              <Link href="">
+              <Link href="/register">
                 <a> Cadastro</a>
               </Link>
             </span>

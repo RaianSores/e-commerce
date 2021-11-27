@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/ProductCard/index.jsx", "src/components/Products/index.jsx", "src/components/Heading/index.jsx", "src/pages/index.tsx", "src/contexts/SearchContext.tsx", "src/pages/_app.jsx", "src/pages/_app.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/ProductCard/index.jsx", "src/components/Products/index.jsx", "src/components/Heading/index.jsx", "src/pages/index.jsx", "src/contexts/SearchContext.tsx", "src/pages/_app.jsx", "src/pages/_app.tsx"],
   "exclude": ["node_modules"]
 }
