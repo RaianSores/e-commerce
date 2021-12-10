@@ -11,7 +11,6 @@ import { BsArrowDownShort } from "@react-icons/all-files/bs/BsArrowDownShort";
 import { AiOutlineSend } from "@react-icons/all-files/ai/AiOutlineSend";
 import { GrClose } from "@react-icons/all-files/gr/GrClose";
 
-import { SidebarData } from "./SidebarData";
 
 export const Heading = () => {
   const router = useRouter()
@@ -20,7 +19,7 @@ export const Heading = () => {
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
-    <header className={styles.containerHeader}>
+    <div className={styles.containerHeader}>
       <div className={styles.header}>
         <div className={styles.headerLayout}>
           <div className="navbar">
@@ -30,25 +29,7 @@ export const Heading = () => {
               </a>
             </Link>
           </div>
-          <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-            <ul className="nav-menu-items" onClick={showSidebar}>
-              <li className="navbar-toggle">
-                <Link href="#" className="menu-bars" passHref>
-                  <GrClose />
-                </Link>
-              </li>
-              {SidebarData.map((item, index) => {
-                return (
-                  <li key={index} className={item.cName}>
-                    <Link href={item.path} passHref>
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+
           <div className={styles.logoHeader}>
             <span>
               <img src="/logo.png" alt="Logo" />
@@ -69,12 +50,14 @@ export const Heading = () => {
             </form>
           </div>
 
+
           <div className={styles.login}>
             <Link href="">
               <a>
                 <FiLogIn size={45} />
               </a>
             </Link>
+            {/** 
             <span>
               <span>Faça </span>
               <Link href="/login">
@@ -85,6 +68,7 @@ export const Heading = () => {
                 <a> Cadastro</a>
               </Link>
             </span>
+            */}
           </div>
 
           <div className={styles.optionalDependencies}>
@@ -137,6 +121,6 @@ export const Heading = () => {
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 };
