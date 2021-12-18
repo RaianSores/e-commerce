@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { useRouter } from 'next/router'
 import styles from "./styles.module.scss";
 import { FiMenu } from "@react-icons/all-files/fi/FiMenu";
 import { FiShoppingCart } from "@react-icons/all-files/fi/FiShoppingCart";
@@ -10,33 +9,27 @@ import { BiSupport } from "@react-icons/all-files/bi/BiSupport";
 import { BsArrowDownShort } from "@react-icons/all-files/bs/BsArrowDownShort";
 import { AiOutlineSend } from "@react-icons/all-files/ai/AiOutlineSend";
 import { GrClose } from "@react-icons/all-files/gr/GrClose";
+import { ButtonDepartment, CategoryNavigation, Container, ContainerCategory, Header, HeaderLayout, Login, Menu, MenuCategory, MenuDepartment, Navigation, OptionalDependencies, SearchAplication } from "./style";
 
 
 export const Heading = () => {
-  const router = useRouter()
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
-    <div className={styles.containerHeader}>
-      <div className={styles.header}>
-        <div className={styles.headerLayout}>
-          <div className="navbar">
+    <Container>
+      <Header className={styles.header}>
+        <HeaderLayout>
+          <Menu>
             <Link href="" passHref>
               <a>
                 <FiMenu size={40} onClick={showSidebar} />
               </a>
             </Link>
-          </div>
+          </Menu>
 
-          <div className={styles.logoHeader}>
-            <span>
-              <img src="/logo.png" alt="Logo" />
-            </span>
-          </div>
-
-          <div className={styles.searchAplication}>
+          <SearchAplication>
             <form
               action="search.search"
               method="GET"
@@ -48,31 +41,18 @@ export const Heading = () => {
               </button>
               <div className={styles.searchDiv}></div>
             </form>
-          </div>
+          </SearchAplication>
 
-
-          <div className={styles.login}>
+          <Login>
             <Link href="">
               <a>
                 <FiLogIn size={45} />
               </a>
             </Link>
-            {/** 
-            <span>
-              <span>Faça </span>
-              <Link href="/login">
-                <a>Login</a>
-              </Link>
-              <span> ou</span>
-              <Link href="/register">
-                <a> Cadastro</a>
-              </Link>
-            </span>
-            */}
-          </div>
+          </Login>
 
-          <div className={styles.optionalDependencies}>
-            <Link href="">
+          <OptionalDependencies>
+            <Link href="/">
               <a>
                 <BsHeart size={30} />
               </a>
@@ -87,20 +67,19 @@ export const Heading = () => {
                 <FiShoppingCart size={30} />
               </a>
             </Link>
-          </div>
-        </div>
-      </div>
+          </OptionalDependencies>
+        </HeaderLayout>
+      </Header>
 
-      <div className={styles.containerCategory}>
-        <div className={styles.menuCategory}>
-          <div className={styles.menuDepartment}>
-            <button>
+      <ContainerCategory>
+        <MenuCategory>
+          <MenuDepartment>
+            <ButtonDepartment>
               TODOS OS DEPARTAMENTOS <BsArrowDownShort size={30} />
-            </button>
-          </div>
-          <div className={styles.navigation}>
-            <nav>
-              <div className={styles.categoryNavigation}>
+            </ButtonDepartment>
+          </MenuDepartment>
+          <Navigation>
+            <CategoryNavigation>     
                 <Link href="">
                   <a>LANÇAMENTOS</a>
                 </Link>
@@ -116,11 +95,10 @@ export const Heading = () => {
                 <Link href="">
                   <a>SHORTS</a>
                 </Link>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
+            </CategoryNavigation>
+          </Navigation>
+        </MenuCategory>
+      </ContainerCategory>
+    </Container>
   );
 };

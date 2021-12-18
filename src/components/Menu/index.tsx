@@ -1,29 +1,11 @@
 import Link from "next/link";
-import { useEffect } from "react";
+import { Container, Sidebar } from "./style";
 
 export const Menu = () => {
-  const handleMenu = () => {
-    const hamburguer = document.querySelector(".hamburguer");
-
-    hamburguer.addEventListener("click", function () {
-      document.querySelector(".container").classList.toggle("show-menu");
-    });
-  };
-
-  useEffect(() => {
-    handleMenu();
-  });
 
   return (
-    <div className="container">
-      <div className="hamburguer" onClick={handleMenu}>
-        <div className="line" id="line1"></div>
-        <div className="line" id="line2"></div>
-        <div className="line" id="line3"></div>
-        <span>fechar</span>
-      </div>
-      <aside className="sidebar">
-        <nav>
+    <Container>
+        <Sidebar>
           <ul className="menu">
             <li className="menu-item">
               <Link href="">
@@ -46,8 +28,7 @@ export const Menu = () => {
               </Link>
             </li>
           </ul>
-        </nav>
-      </aside>
-    </div>
+        </Sidebar>
+    </Container>
   );
 };

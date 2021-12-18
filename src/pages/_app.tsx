@@ -3,18 +3,18 @@ import type { AppProps } from 'next/app'
 
 import { Footer } from '../components/Footer';
 import { Heading } from '../components/Heading';
-
-import '../styles/globals.scss'
+import { GlobalStyle } from '../styles/global';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Heading />
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <Component {...pageProps} />
-      <Footer />
+      <GlobalStyle />
+        <Heading />
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </Head>
+        <Component {...pageProps} />
+        <Footer />
     </>
   )
 }

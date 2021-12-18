@@ -1,22 +1,21 @@
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { Products } from '../components/Products';
 
-import styles from "../styles/Home.module.scss";
+import { Container, Main } from '../styles/home';
 
 const Home = () => {
+
   return (
     <>
-    <Head>
-      <title>Maydson Store | Maior loja do Brasil!</title>
-    </Head>
-      <main className={styles.main}>
-        <div className={styles.container}>
-          <div>
-           
-            <h1>Produtos</h1>
-          </div>
-        </div>
-      </main>
+      <Head>
+        <title>Maydson Store | Maior loja do Brasil!</title>
+      </Head>
+
+      <Container>
+        <Main>
+
+        </Main>
+      </Container>
     </>
   );
 };

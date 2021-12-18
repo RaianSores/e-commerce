@@ -1,20 +1,22 @@
-.containerHeader {
+import styled from "styled-components";
+
+export const Container = styled.div`
   display: flex;
   -webkit-box-align: center;
   align-items: center;
   position: relative;
   flex-direction: column;
-}
+`;
 
-.header {
+export const Header = styled.header`
   position: relative;
   z-index: 9999;
   width: 100%;
   padding: 0px 1.5rem;
   background: var(--black-color);
-}
+`;
 
-.headerLayout {
+export const HeaderLayout = styled.div`
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -27,32 +29,23 @@
   width: 100%;
   padding: 16px 0px;
   height: 8rem;
-}
+`;
 
-.containerNav {
-  height: 3rem;
-  cursor: pointer;
-
+export const Menu = styled.div`
   a {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 2.25rem;
+    height: 2.25rem;
     color: var(--grey-trash-icon);
   }
-}
+`;
 
-.logoHeader {
-  display: flex;
-  align-items: center;
-  
-  h1 {
-    color: var(--grey-trash-icon);
-  }
-
-  img {
-    height: 5rem;
-    border-radius: 50%;
-  }
-}
-
-.searchAplication {
+export const SearchAplication = styled.div`
   display: flex;
   position: relative;
   z-index: 1;
@@ -83,16 +76,9 @@
     border: none;
     color: var(--text-grey);
   }
-}
+`;
 
-.searchForm {
-  display: flex;
-  position: relative;
-  z-index: 1;
-  width: calc(100% - 60px);
-}
-
-.login {
+export const Login = styled.div`
   display: flex;
   flex-shrink: 0;
   -webkit-box-align: center;
@@ -112,21 +98,9 @@
     color: var(--grey-trash-icon);
     text-decoration: none;
   }
-}
+`;
 
-.customerInformation {
-  display: flex;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  justify-content: center;
-  align-items: flex-start;
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-  max-width: 130px;
-  margin-left: 6px;
-}
-
-.optionalDependencies {
+export const OptionalDependencies = styled.div`
   display: flex;
   gap: 1.5rem;
 
@@ -141,40 +115,17 @@
     height: 2.25rem;
     color: var(--grey-trash-icon);
   }
-}
+`;
 
-.menuDepartment {
-  background-color: var(--gold-dark);
-  padding: 0px;
-  display: flex;
-  -webkit-box-pack: end;
-  justify-content: flex-end;
-  position: relative;
-
-  button {
-    font-size: 14px;
-    text-align: right;
-    font-weight: 700;
-    color: var(--white);
-    background-color: transparent;
-    position: relative;
-    cursor: pointer;
-    border: none;
-    width: 262px;
-    padding: 8px 53px 8px 0px;
-    z-index: 2;
-  }
-}
-
-.containerCategory {
+export const ContainerCategory = styled.div`
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
   width: 100%;
   background-color: var(--gold-color);
-}
+`;
 
-.menuCategory {
+export const MenuCategory = styled.div`
   background-color: var(--gold-color);
   width: 100%;
   position: relative;
@@ -182,11 +133,43 @@
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
-}
+`;
 
-.navigation {
+export const MenuDepartment = styled.div`
+  background-color: var(--gold-dark);
+  padding: 0px;
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  position: relative;
+`;
+
+export const ButtonDepartment = styled.button`
+  font-size: 14px;
+  text-align: right;
+  font-weight: 700;
+  color: var(--white);
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  width: 262px;
+  padding: 8px 53px 8px 0px;
+  z-index: 2;
+`;
+
+export const Navigation = styled.div`
   width: 100%;
   position: relative;
+
+`;
+
+export const CategoryNavigation = styled.nav`
+  max-width: 1216px;
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
 
   nav {
     max-width: 1216px;
@@ -195,15 +178,7 @@
     -webkit-box-pack: justify;
     justify-content: space-between;
   }
-}
-
-.categoryNavigation {
-  max-width: 1216px;
-  width: 100%;
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-
+  
   a {
     font-size: 18px;
     font-weight: 700;
@@ -215,4 +190,4 @@
     cursor: pointer;
     height: 2rem;
   }
-}
+`;

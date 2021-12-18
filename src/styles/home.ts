@@ -1,8 +1,10 @@
-.container {
-  padding: 0 2rem;
-}
+import styled from "styled-components";
 
-.main {
+export const Container = styled.div`
+  padding: 0 2rem;
+`;
+
+export const Main = styled.div`
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
@@ -10,16 +12,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.logo {
-  height: 10em;
-  margin-left: 5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
+`;
