@@ -45,13 +45,39 @@ export const Menu = styled.div`
   }
 `;
 
+export const IconBar = styled.link`
+  margin: 0 auto;
+  padding: 0;
+`
+
 export const SearchAplication = styled.div`
   display: flex;
   position: relative;
   z-index: 1;
-  width: calc(50% - 80px);
+  width: calc(50% - 50px);
+`;
 
-  input {
+export const SearchForm = styled.form`
+  display: flex;
+  position: relative;
+  z-index: 8;
+  width: calc(100% - 60px);
+`;
+
+export const ButtonSearch = styled.button`
+    width: 25px;
+    height: 65px;
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    z-index: 2;
+    top: -12.5px;
+    right: -115px;
+    border: none;
+    color: var(--grey-trash-icon);
+`;
+
+export const Input = styled.input`
     font-size: 0.875rem;
     line-height: 1.3125rem;
     position: relative;
@@ -62,20 +88,6 @@ export const SearchAplication = styled.div`
     color: var(--text-grey-weak);
     border-radius: 0.25rem;
     z-index: 1;
-  }
-
-  button {
-    width: 280px;
-    height: 65px;
-    cursor: pointer;
-    background-color: transparent;
-    position: absolute;
-    z-index: 2;
-    top: -12.5px;
-    right: -115px;
-    border: none;
-    color: var(--text-grey);
-  }
 `;
 
 export const Login = styled.div`

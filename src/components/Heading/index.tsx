@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import Image from 'next/image';
 import Link from "next/link";
-import styles from "./styles.module.scss";
 import { FiMenu } from "@react-icons/all-files/fi/FiMenu";
 import { FiShoppingCart } from "@react-icons/all-files/fi/FiShoppingCart";
 import { FiLogIn } from "@react-icons/all-files/fi/FiLogIn";
@@ -8,8 +8,25 @@ import { BsHeart } from "@react-icons/all-files/bs/BsHeart";
 import { BiSupport } from "@react-icons/all-files/bi/BiSupport";
 import { BsArrowDownShort } from "@react-icons/all-files/bs/BsArrowDownShort";
 import { AiOutlineSend } from "@react-icons/all-files/ai/AiOutlineSend";
-import { GrClose } from "@react-icons/all-files/gr/GrClose";
-import { ButtonDepartment, CategoryNavigation, Container, ContainerCategory, Header, HeaderLayout, Login, Menu, MenuCategory, MenuDepartment, Navigation, OptionalDependencies, SearchAplication } from "./style";
+import {
+  ButtonDepartment,
+  ButtonSearch,
+  CategoryNavigation,
+  Container,
+  ContainerCategory,
+  Header,
+  HeaderLayout,
+  IconBar,
+  Input,
+  Login,
+  Menu,
+  MenuCategory,
+  MenuDepartment,
+  Navigation,
+  OptionalDependencies,
+  SearchAplication,
+  SearchForm
+} from "./style";
 
 
 export const Heading = () => {
@@ -19,7 +36,7 @@ export const Heading = () => {
 
   return (
     <Container>
-      <Header className={styles.header}>
+      <Header>
         <HeaderLayout>
           <Menu>
             <Link href="" passHref>
@@ -28,23 +45,20 @@ export const Heading = () => {
               </a>
             </Link>
           </Menu>
-
           <SearchAplication>
-            <form
+            <SearchForm
               action="search.search"
               method="GET"
-              className={styles.searchForm}
             >
-              <input autoComplete="off" type="text" placeholder="Busque aqui" />
-              <button type="submit">
+              <Input autoComplete="off" type="text" placeholder="Busque aqui" />
+              <ButtonSearch type="submit">
                 <AiOutlineSend size={40} />
-              </button>
-              <div className={styles.searchDiv}></div>
-            </form>
+              </ButtonSearch>
+            </SearchForm>
           </SearchAplication>
 
           <Login>
-            <Link href="">
+            <Link href="/login">
               <a>
                 <FiLogIn size={45} />
               </a>
@@ -79,22 +93,22 @@ export const Heading = () => {
             </ButtonDepartment>
           </MenuDepartment>
           <Navigation>
-            <CategoryNavigation>     
-                <Link href="">
-                  <a>LANÇAMENTOS</a>
-                </Link>
-                <Link href="">
-                  <a>CAMISAS</a>
-                </Link>
-                <Link href="">
-                  <a>BLUSAS</a>
-                </Link>
-                <Link href="">
-                  <a>CALÇAS</a>
-                </Link>
-                <Link href="">
-                  <a>SHORTS</a>
-                </Link>
+            <CategoryNavigation>
+              <Link href="">
+                <a>LANÇAMENTOS</a>
+              </Link>
+              <Link href="">
+                <a>CAMISAS</a>
+              </Link>
+              <Link href="">
+                <a>BLUSAS</a>
+              </Link>
+              <Link href="">
+                <a>CALÇAS</a>
+              </Link>
+              <Link href="">
+                <a>SHORTS</a>
+              </Link>
             </CategoryNavigation>
           </Navigation>
         </MenuCategory>
