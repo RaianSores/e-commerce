@@ -2,11 +2,29 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
+import ProductList from '../components/ProductList';
 
 import { Container, Main } from '../styles/home';
 
-const Home = () => {
+import commerce from "../lib/commerce";
 
+export async function getStaticProps() {
+  const { data: products } = await commerce.products.list();
+
+  return {
+    props: {
+      products,
+    },
+  };
+}
+
+interface ProductsProps {
+  merchant: string,
+  categories: string[],
+  products: string[],
+}
+
+const Home = (props: ProductsProps) => {
   return (
     <>
       <Head>
@@ -15,36 +33,9 @@ const Home = () => {
 
       <Container>
         <Main>
-          <section>
-            <div>
-              <h1>Nome do produto</h1>
-              <Image src="/1.png" alt="Logo" width={500} height={600} />
-              <p>R$ 120,00</p>
-              <span>Camisa masculina algodão</span>
-              <p>+</p><p>-</p>
-            </div>
-            <div>
-              <h1>Nome do produto</h1>
-              <Image src="/2.png" alt="Logo" width={500} height={600} />
-              <p>R$ 120,00</p>
-              <span>Camisa masculina algodão</span>
-              <p>+</p><p>-</p>
-            </div>
-            <div>
-              <h1>Nome do produto</h1>
-              <Image src="/3.png" alt="Logo" width={500} height={600} />
-              <p>R$ 120,00</p>
-              <span>Camisa masculina algodão</span>
-              <p>+</p><p>-</p>
-            </div>
-            <div>
-              <h1>Nome do produto</h1>
-              <Image src="/4.png" alt="Logo" width={500} height={600} />
-              <p>R$ 120,00</p>
-              <span>Camisa masculina algodão</span>
-              <p>+</p><p>-</p>
-            </div>
-          </section>
+          <React.Fragment>
+            <ProductList products={props.products} />
+          </React.Fragment>
         </Main>
       </Container>
     </>
