@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Image from 'next/image';
 import Link from "next/link";
-import { FiMenu } from "@react-icons/all-files/fi/FiMenu";
 import { FiShoppingCart } from "@react-icons/all-files/fi/FiShoppingCart";
 import { FiLogIn } from "@react-icons/all-files/fi/FiLogIn";
 import { BsHeart } from "@react-icons/all-files/bs/BsHeart";
@@ -16,10 +14,8 @@ import {
   ContainerCategory,
   Header,
   HeaderLayout,
-  IconBar,
   Input,
   Login,
-  Menu,
   MenuCategory,
   MenuDepartment,
   Navigation,
@@ -29,22 +25,13 @@ import {
 } from "./style";
 
 
-export const Heading = () => {
-  const [sidebar, setSidebar] = useState(false);
 
-  const showSidebar = () => setSidebar(!sidebar);
+export const Heading = () => {
 
   return (
     <Container>
       <Header>
         <HeaderLayout>
-          <Menu>
-            <Link href="" passHref>
-              <a>
-                <FiMenu size={40} onClick={showSidebar} />
-              </a>
-            </Link>
-          </Menu>
           <SearchAplication>
             <SearchForm
               action="search.search"
@@ -76,7 +63,7 @@ export const Heading = () => {
                 <BiSupport size={30} />
               </a>
             </Link>
-            <Link href="">
+            <Link href="/cart">
               <a>
                 <FiShoppingCart size={30} />
               </a>

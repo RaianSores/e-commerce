@@ -29,6 +29,24 @@ export const GlobalStyle = createGlobalStyle`
     --black-color: #202124;
     --gold-color: #FFB700;
     --gold-dark: #FFA408;
+
+    --reputation-1: #FFE7E6;
+    --reputation-2: #FFF4E7;
+    --reputation-3: #FFFDE5;
+    --reputation-4: #F3FEE0;
+    --reputation-5: #00A650;
+    }
+
+    @media (max-width: 1080px) {
+        html {
+            font-size: 93.75%;
+        }
+    }
+
+    @media (max-width: 720px) {
+        html {
+            font-size: 87.5%;
+        }
     }
 
     a {

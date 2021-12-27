@@ -1,30 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-
-import ProductList from '../components/ProductList';
 
 import { Container, Main } from '../styles/home';
+import Layout from '../components/Layout';
 
-import commerce from "../lib/commerce";
-
-export async function getStaticProps() {
-  const { data: products } = await commerce.products.list();
-
-  return {
-    props: {
-      products,
-    },
-  };
-}
-
-interface ProductsProps {
-  merchant: string,
-  categories: string[],
-  products: string[],
-}
-
-const Home = (props: ProductsProps) => {
+const Home = () => {
   return (
     <>
       <Head>
@@ -33,9 +13,7 @@ const Home = (props: ProductsProps) => {
 
       <Container>
         <Main>
-          <React.Fragment>
-            <ProductList products={props.products} />
-          </React.Fragment>
+
         </Main>
       </Container>
     </>
