@@ -35,8 +35,6 @@ const Product: React.FC = () => {
                     <SellerInfo />
 
                     <WarrantySection />
-                    <WarrantySection />
-                    <WarrantySection />
                 </Column>
             </Panel>
         </Container>

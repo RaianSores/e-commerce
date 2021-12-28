@@ -2,17 +2,19 @@ import styled from "styled-components";
 
 import { FaTimes } from "@react-icons/all-files/fa/FaTimes";
 
-export const SidebarContainer = styled.aside`
+type MenuProps = { isOpen?: boolean };
+
+export const SidebarContainer = styled.aside<MenuProps>`
     position: fixed;
     z-index: 999;
     width: 350px;
     height: 100%;
-    background: var(--grey-trash-icon);
+    background: var(--black-color);
     display: grid;
     align-items: center;
     top: 0;
-    transition: 0.3s ease-in-out;
-    right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
+    transition: 0.5s ease-in-out;
+    left: ${({ isOpen }) => (isOpen ? '0' : '-1420px')};
 
     @media screen and (max-width: 400px) {
         width: 100%;
@@ -54,11 +56,11 @@ export const SidebarLink = styled.div`
     list-style: none;
     transition: 0.2s ease-in-out;
     text-decoration: none;
-    color: var(--red);
+    color: var(--gold-dark);
     cursor: pointer;
 
     &:hover {
-        color: var(--blue);
+        color: var(--orange-text);
         transition: 0.2s ease-in-out;
     }
 `;

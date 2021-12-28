@@ -48,6 +48,10 @@ export const Gallery = styled.div`
   > img {
     height: 73%;
     border-radius: 5px;
+
+    @media screen and (max-width: 750px) {
+      height: 40%;
+    }
   }
 `;
 

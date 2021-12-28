@@ -23,8 +23,9 @@ import {
   OptionalDependencies,
   SearchAplication,
   SearchForm
-} from "./style";
-
+} from "./styles";
+import { Sidebar } from "../Sidebar";
+import { Navbar } from "../Navbar";
 
 export const Heading: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,11 +33,13 @@ export const Heading: React.FC = () => {
   const toggle = () => {
       setIsOpen(!isOpen);
   };
-  
+
   return (
     <Container>
       <Header >
         <HeaderLayout>
+          <Navbar toggle={toggle}/>
+          <Sidebar isOpen={isOpen} toggle={toggle}/>
           <Image src="/favicon.ico" alt="Logo" width={50} height={50} />
           <SearchAplication>
             <SearchForm
