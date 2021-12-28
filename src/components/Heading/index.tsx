@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from 'next/image';
 import Link from "next/link";
 import { FiShoppingCart } from "@react-icons/all-files/fi/FiShoppingCart";
 import { FiLogIn } from "@react-icons/all-files/fi/FiLogIn";
@@ -25,13 +26,18 @@ import {
 } from "./style";
 
 
-
-export const Heading = () => {
-
+export const Heading: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const toggle = () => {
+      setIsOpen(!isOpen);
+  };
+  
   return (
     <Container>
-      <Header>
+      <Header >
         <HeaderLayout>
+          <Image src="/favicon.ico" alt="Logo" width={50} height={50} />
           <SearchAplication>
             <SearchForm
               action="search.search"
@@ -43,22 +49,20 @@ export const Heading = () => {
               </ButtonSearch>
             </SearchForm>
           </SearchAplication>
-
-          <Login>
-            <Link href="/login">
-              <a>
-                <FiLogIn size={45} />
-              </a>
-            </Link>
-          </Login>
-
           <OptionalDependencies>
+            <Login>
+              <Link href="/login">
+                <a>
+                  <FiLogIn size={45} />
+                </a>
+              </Link>
+            </Login>
             <Link href="/">
               <a>
                 <BsHeart size={30} />
               </a>
             </Link>
-            <Link href="">
+            <Link href="/">
               <a>
                 <BiSupport size={30} />
               </a>
@@ -79,6 +83,7 @@ export const Heading = () => {
               TODOS OS DEPARTAMENTOS <BsArrowDownShort size={30} />
             </ButtonDepartment>
           </MenuDepartment>
+
           <Navigation>
             <CategoryNavigation>
               <Link href="">

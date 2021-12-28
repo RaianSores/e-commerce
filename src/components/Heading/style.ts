@@ -14,6 +14,12 @@ export const Header = styled.header`
   width: 100%;
   padding: 0px 1.5rem;
   background: var(--black-color);
+
+  > img {
+    border-radius: 8px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
 `;
 
 export const HeaderLayout = styled.div`
@@ -48,7 +54,7 @@ export const Menu = styled.div`
 export const IconBar = styled.link`
   margin: 0 auto;
   padding: 0;
-`
+`;
 
 export const SearchAplication = styled.div`
   display: flex;
@@ -65,29 +71,33 @@ export const SearchForm = styled.form`
 `;
 
 export const ButtonSearch = styled.button`
-    width: 25px;
-    height: 65px;
-    cursor: pointer;
-    background-color: transparent;
-    position: absolute;
-    z-index: 2;
-    top: -12.5px;
-    right: -115px;
-    border: none;
-    color: var(--grey-trash-icon);
+  width: 25px;
+  height: 65px;
+  cursor: pointer;
+  background-color: transparent;
+  position: absolute;
+  z-index: 2;
+  top: -12.5px;
+  right: -115px;
+  border: none;
+  color: var(--grey-trash-icon);
 `;
 
 export const Input = styled.input`
-    font-size: 0.875rem;
-    line-height: 1.3125rem;
-    position: relative;
-    width: 100%;
-    height: 2.25rem;
-    padding: 12px 16px;
-    background: var(--white);
-    color: var(--text-grey-weak);
-    border-radius: 0.25rem;
-    z-index: 1;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  position: relative;
+  width: 100%;
+  height: 2.25rem;
+  padding: 12px 16px;
+  background: var(--white);
+  color: var(--text-grey-weak);
+  border-radius: 0.25rem;
+  z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Login = styled.div`
@@ -126,6 +136,10 @@ export const OptionalDependencies = styled.div`
     width: 2.25rem;
     height: 2.25rem;
     color: var(--grey-trash-icon);
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -173,7 +187,6 @@ export const ButtonDepartment = styled.button`
 export const Navigation = styled.div`
   width: 100%;
   position: relative;
-
 `;
 
 export const CategoryNavigation = styled.nav`
@@ -190,7 +203,7 @@ export const CategoryNavigation = styled.nav`
     -webkit-box-pack: justify;
     justify-content: space-between;
   }
-  
+
   a {
     font-size: 18px;
     font-weight: 700;
@@ -201,5 +214,9 @@ export const CategoryNavigation = styled.nav`
     text-decoration: none;
     cursor: pointer;
     height: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;

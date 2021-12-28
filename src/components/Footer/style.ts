@@ -24,5 +24,13 @@ export const Container = styled.footer`
   p {
     font-size: 1.2rem;
     color: var(--black-color);
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      position: relative;
+      z-index: 1;
+      font-size: 1rem;
+      width: calc(50% - 50px);
+    }
   }
 `;
