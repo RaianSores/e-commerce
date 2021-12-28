@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { FaTimes } from "@react-icons/all-files/fa/FaTimes";
 
@@ -21,8 +21,14 @@ export const SidebarContainer = styled.aside<MenuProps>`
     }
 `;
 
+const iconCSS = css`
+  width: 30px;
+  height: 30px;
+  color: var(--grey-trash-icon);
+`;
+
 export const CloseIcon = styled(FaTimes)`
-    color: var(--grey-trash-icon);
+    ${iconCSS}
 `;
 
 export const Icon = styled.div`
