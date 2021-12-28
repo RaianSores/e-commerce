@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import { Container, Main } from '../styles/home';
 import Layout from '../components/Layout';
+import { ProductsGrind } from '../components/ProductsGrid';
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
 
       <Container>
         <Main>
-
+          <ProductsGrind />
         </Main>
       </Container>
     </>

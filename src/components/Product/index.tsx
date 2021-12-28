@@ -2,7 +2,6 @@ import React from 'react';
 import ProductAction from '../ProductAction';
 import SellerInfo from '../SellerInfo';
 
-
 import {
     Container,
     Row,
