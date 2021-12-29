@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/ProductCard/index.tsx", "src/components/Products/Products.js", "src/components/Heading/index.tsx", "src/pages/index.tsx", "src/contexts/SearchContext.tsx", "src/pages/_app.jsx", "src/pages/_app.tsx", "src/components/Sidebar/index.tsx", "src/components/ProductCard/index.js", "src/lib/commerce.js", "src/components/ProductList/index.jsx", "src/components/Product/index.js", "src/components/ProductList/index.js", "src/components/CategoryList/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/ProductCard/index.js", "src/components/Products/Products.js", "src/components/Heading/index.tsx", "src/pages/index.tsx", "src/contexts/SearchContext.tsx", "src/pages/_app.jsx", "src/pages/_app.tsx", "src/components/Sidebar/index.tsx", "src/components/ProductCard/index.js", "src/lib/commerce.js", "src/components/ProductList/index.jsx", "src/components/Product/index.js", "src/components/ProductList/index.js", "src/components/CategoryList/index.js", "src/components/ProductsGrid/data.js"],
   "exclude": ["node_modules"]
 }
