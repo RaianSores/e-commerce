@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { ContainerGrid } from './styles';
 import { Item } from './types/item';
 import { loadProducts } from './data';
 
@@ -36,7 +37,7 @@ export const ProductsGrind = () => {
 
     return (
         <>
-            <div>
+            <ContainerGrid>
                 {products.map((product) => (
                     <ProductsCard
                         key={product.id}
@@ -48,7 +49,7 @@ export const ProductsGrind = () => {
                         image={product.image}
                     />
                 ))}
-            </div>
+            </ContainerGrid>
         </>
     )
 }

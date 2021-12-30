@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const ProductsContainer = styled.div`
-  width: 100vw;
-  //min-height: 100vh;
-  padding: 5rem calc((100vw - 1100px) / 2);
+  min-height: 5vh;
+  padding: 1rem calc((85vw - 1300px) / 10);
   background: var(--black-color);
-  color: #fff;
+  color: var(--grey-line);
+  border-radius: 5px;
+  grid-row-end: 1;
 `;
 
 export const ProductWrapper = styled.div`
@@ -18,25 +19,30 @@ export const ProductWrapper = styled.div`
 export const ProductCard = styled.div`
     margin: flex;
     line-height: 2;
-    width: 300px;
+    width: 350px;
 `;
+
 export const ProductImg = styled.img`
-    height: 300px;
-    min-width: 300px;
-    max-width: 100%;
-    box-shadow: 8px 8px #fdc500;
+    height: 20rem;
+    min-width: 15rem;
+    max-width: 10%;
+    box-shadow: 8px 8px var(--gold-dark);
 `;
 
 export const ProductsHeading = styled.h1`
-    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 `;
 
 export const ProductTitle = styled.h2`
-    font-weight: 400;
+    font-weight: 700;
     font-size: 14px;
-    color: var(--blue);
+    color: var(--red);
 `;
 
 export const ProductInfo = styled.div`
@@ -49,26 +55,39 @@ export const ProductInfo = styled.div`
 `;
 
 export const ProductDesc = styled.p`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    padding: 1rem;
 `;
 
 export const ProductPrice = styled.p`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 1rem;
-    font-size: 12px;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
 `;
 
 export const ProductButton = styled.button`
     font-size: 1rem;
     padding: 1rem 4rem;
     border: none;
-    background: #e31837;
+    background: var(--red);
     color: #fff;
+    border-radius: 5px;
     transition: 0.2 ease-out;
 
     &:hover {
-        background: #ffc500;
+        background: var(--gold-dark);
         transition: 0.2s ease-out;
         cursor: pointer;
-        color: #000;
+        color: var(--black-color);
     }
 `;

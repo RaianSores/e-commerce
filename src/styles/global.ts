@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     --blue: #0060b1;
     --green: #2DC26E;
     --green-text: #1F9050;
-    --red: #E72626;
+    --red: #e31837;
     --grey-trash-icon: #B6BBC2;
     --grey-line: #DEE0E4;
     --black-color: #202124;
