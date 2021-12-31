@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductAction from '../ProductAction';
+import ProductAction from './ProductAction';
 import SellerInfo from '../SellerInfo';
 
 import {

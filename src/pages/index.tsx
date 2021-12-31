@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import { Container, Main } from '../styles/home';
-import { ProductsGrind } from '../components/ProductsGrid';
+import { ProductsGrind } from '../components/Product/ProductsGrid';
 
 
 const Home = () => {
